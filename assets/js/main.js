@@ -16,7 +16,16 @@ function startCountdown() {
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
-    countdownEl.textContent = `${days} días ${hours}h ${minutes}m ${seconds}s`;
+    const pad = n => String(n).padStart(2, "0");
+    countdownEl.innerHTML = `
+      <div class="countdown-unit"><span class="countdown-number">${pad(days)}</span><span class="countdown-label">Días</span></div>
+      <div class="countdown-separator">|</div>
+      <div class="countdown-unit"><span class="countdown-number">${pad(hours)}</span><span class="countdown-label">Horas</span></div>
+      <div class="countdown-separator">|</div>
+      <div class="countdown-unit"><span class="countdown-number">${pad(minutes)}</span><span class="countdown-label">Minutos</span></div>
+      <div class="countdown-separator">|</div>
+      <div class="countdown-unit"><span class="countdown-number">${pad(seconds)}</span><span class="countdown-label">Segundos</span></div>
+    `;
   }
 
   updateCountdown();

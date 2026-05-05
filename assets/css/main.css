@@ -1,43 +1,5 @@
-/* Location section: pantalla completa con foto y botón */
-.location-section {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  min-height: 100svh;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-.location-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/lloc.jpg") center center/cover no-repeat;
-  z-index: 1;
-}
-
-.maps-btn {
-  position: absolute;
-  top: 40px;
-  right: 48px;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.92);
-  color: #222;
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 12px 28px;
-  border-radius: 32px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-  text-decoration: none;
-  transition:
-    background 0.2s,
 /* CSS principal para la boda */
 body {
   margin: 0;
@@ -61,32 +23,60 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/intro.jpeg") center center/cover no-repeat;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 62%
+    ),
+    url("../img/intro.jpeg") center center/cover no-repeat;
   z-index: 1;
 }
 .countdown-container {
-  position: absolute;
-  left: 50%;
-  bottom: 32px;
-  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  height: auto;
+  background-color: #ffffffb3;
+  padding: 20px 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  align-items: center;
+  height: 120px;
+}
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 4vw, 36px);
+}
+.countdown-unit {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 2;
-  width: 100%;
-  padding: 0 12px;
+  gap: 5px;
 }
-.countdown {
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 16px;
-  padding: 14px 18px;
-  font-size: 1.3rem;
-  font-weight: bold;
+.countdown-number {
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(1.6rem, 8vw, 3.5rem);
+  font-weight: 700;
   letter-spacing: 2px;
-  color: #222;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-  margin-bottom: 12px;
-  text-align: center;
+  color: #1a1a1a;
+  line-height: 1;
+}
+.countdown-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(0.5rem, 2vw, 0.65rem);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+.countdown-separator {
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  color: #1a1a1a;
+  font-weight: 200;
+  line-height: 1;
+  align-self: flex-start;
+  margin-top: 3px;
 }
 .hero-date {
   color: #fff;
@@ -97,13 +87,16 @@ body {
   text-align: center;
 }
 
-/* Location section: pantalla completa con foto y botón */
+/* Location section */
 .location-section {
   position: relative;
   width: 100vw;
   height: 100dvh;
   min-height: 100svh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .location-bg {
   position: absolute;
@@ -111,43 +104,66 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../img/lloc.jpg') center center/cover no-repeat;
+  background: url("../img/lloc.jpg") center center/cover no-repeat;
   z-index: 1;
 }
-.maps-btn {
-  position: absolute;
-  top: 18px;
-  right: 16px;
+.location-card {
+  position: relative;
   z-index: 2;
+  background: #f5f0e8;
+  border-radius: 8px;
+  padding: 48px 40px 40px;
+  max-width: 380px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.location-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 20px;
+  line-height: 1.1;
+}
+.location-desc {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+.location-address {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin: 0 0 32px;
+}
+.maps-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(255,255,255,0.92);
-  color: #222;
+  justify-content: center;
+  background: #7a9a72;
+  color: #fff;
+  font-family: "Courier New", Courier, monospace;
   font-weight: 600;
   font-size: 1rem;
-  padding: 10px 18px;
-  border-radius: 32px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  padding: 14px 28px;
+  border-radius: 4px;
   text-decoration: none;
-  transition: background 0.2s, box-shadow 0.2s;
+  transition: background 0.2s;
+  letter-spacing: 0.5px;
 }
 .maps-btn:hover {
-  background: #e3e3e3;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.13);
-}
-.maps-icon {
-  display: flex;
-  align-items: center;
-  margin-right: 2px;
+  background: #5e7d58;
 }
 
 /* Responsive para tablets y escritorio */
 @media (min-width: 600px) {
-  .countdown {
-    font-size: 2rem;
-    padding: 18px 36px;
-  }
   .hero-date {
     font-size: 1.2rem;
   }
@@ -155,10 +171,24 @@ body {
     bottom: 60px;
     padding: 0;
   }
-  .maps-btn {
-    top: 40px;
-    right: 48px;
-    font-size: 1.1rem;
-    padding: 12px 28px;
+  .location-section {
+    justify-content: flex-start;
+    align-items: center;
   }
+  .location-card {
+    margin-left: clamp(32px, 5vw, 80px);
+    width: 380px;
+  }
+}
+
+img.hero-logo {
+  z-index: 100;
+  width: 300px;
+}
+
+.hero-logo-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-top: 20px;
 }
