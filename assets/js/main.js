@@ -95,6 +95,60 @@ document.addEventListener("DOMContentLoaded", startCountdown);
   onScroll();
 })();
 
+
+// ── Timeline connector to Festa Major board ──
+(function () {
+  const connector = document.getElementById("fmConnector");
+  const fill = document.getElementById("fmConnectorFill");
+  const svg = document.getElementById("fmConnectorDots");
+  const section = document.querySelector(".festa-major-section");
+  const board = document.querySelector(".fm-board");
+  if (!connector || !fill || !section || !board) return;
+
+  let trackHeight = 0;
+
+  function buildDiamonds(h) {
+    if (!svg) return;
+    svg.setAttribute("viewBox", `0 0 14 ${h}`);
+    svg.setAttribute("height", h);
+    const spacing = 28;
+    const count = Math.floor(h / spacing);
+    let markup = "";
+    for (let i = 0; i <= count; i++) {
+      const y = i * spacing + spacing / 2;
+      markup += `<rect x="7" y="${y}" width="4" height="4" rx="0.8"
+        transform="rotate(45 7 ${y})"
+        fill="none" stroke="#b8ccb2" stroke-width="1.2" opacity="0.55"/>`;
+    }
+    svg.innerHTML = markup;
+  }
+
+  function updateTrack() {
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const boardTop = board.getBoundingClientRect().top + window.scrollY;
+    trackHeight = Math.max(0, boardTop - sectionTop);
+    connector.style.height = trackHeight + "px";
+    buildDiamonds(trackHeight);
+  }
+
+  function onScroll() {
+    if (trackHeight === 0) return;
+    const rect = section.getBoundingClientRect();
+    const windowH = window.innerHeight;
+    // Sync with timeline: timeline ends when its bottom = windowH*0.3, i.e. festa rect.top = windowH*0.3
+    // Connector fills over exactly trackHeight px of scroll from that point
+    const syncTop = windowH * 0.3;
+    const progress = Math.min(1, Math.max(0, (syncTop - rect.top) / trackHeight));
+    fill.style.height = (progress * 100) + "%";
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", () => { updateTrack(); onScroll(); }, { passive: true });
+
+  updateTrack();
+  onScroll();
+})();
+
 // Acordeon FAQ
 document.querySelectorAll(".faq-question").forEach((btn) => {
   btn.addEventListener("click", () => {
