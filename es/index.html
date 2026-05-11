@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boda Alba i Xavi</title>
+  <link rel="icon" type="image/png" href="../assets/img/festamajor/favicon.png">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+  <main class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-logo-container">
+      <img src="../assets/img/logo.svg" alt="logo" class="hero-logo">
+    </div>
+  </main>
+
+  <section class="countdown-container">
+    <div id="countdown" class="countdown"
+      data-days="Días" data-hours="Horas" data-minutes="Minutos" data-seconds="Segundos"
+      data-final="¡Ha llegado el gran día!"></div>
+  </section>
+
+  <section class="location-section">
+    <div class="location-bg"></div>
+    <div class="location-card">
+      <h2 class="location-title">Cómo llegar</h2>
+      <p class="location-desc">La casa de colonias Can Sans está situada en el vecindario de Fellines, a las afueras de
+        Viladasens. Situada a unos 20 kilómetros de Girona, Banyoles y Figueres.</p>
+      <p class="location-address">Cami de Fellines s/n<br>Viladasens (Girona)</p>
+      <a class="maps-btn" href="https://maps.app.goo.gl/ukFLAEK5EjDUNGdo9" target="_blank" rel="noopener">
+        Google Maps
+      </a>
+    </div>
+  </section>
+
+  <section class="timeline-section" id="timeline">
+    <div class="timeline-wrapper">
+      <div class="timeline-line-track">
+        <div class="timeline-line-fill" id="timelineLine"></div>
+        <svg class="timeline-dots-svg" id="timelineDots" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+
+      <div class="timeline-item tl-left" data-index="0">
+        <div class="tl-content">
+          <img src="../assets/img/1.webp" alt="Llegada" class="tl-img">
+          <div class="tl-text">
+            <span class="tl-time">16:00h</span>
+            <span class="tl-label">Llegada</span>
+          </div>
+        </div>
+        <div class="tl-dot"></div>
+      </div>
+
+      <div class="timeline-item tl-right" data-index="1">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <img src="../assets/img/2.webp" alt="Instalarse" class="tl-img">
+          <div class="tl-text">
+            <span class="tl-time">16:15h</span>
+            <span class="tl-label">Instalarse</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item tl-left" data-index="2">
+        <div class="tl-content">
+          <img src="../assets/img/3.webp" alt="La Previa" class="tl-img">
+          <div class="tl-text">
+            <span class="tl-time">16:45h</span>
+            <span class="tl-label">La Previa</span>
+          </div>
+        </div>
+        <div class="tl-dot"></div>
+      </div>
+
+      <div class="timeline-item tl-right" data-index="3">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <img src="../assets/img/4.webp" alt="Ceremonia" class="tl-img">
+          <div class="tl-text">
+            <span class="tl-time">17:30h</span>
+            <span class="tl-label">Ceremonia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="festa-major-section">
+    <div class="fm-wood-bg"></div>
+    <div class="fm-timeline-connector" id="fmConnector">
+      <div class="fm-connector-fill" id="fmConnectorFill"></div>
+      <svg class="timeline-dots-svg" id="fmConnectorDots" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+
+    <div class="fm-scene">
+<div class="fm-board">
+        <div class="fm-character fm-xavi">
+          <img src="../assets/img/festamajor/xavi.png" alt="Xavi">
+        </div>
+        <div class="fm-character fm-alba">
+          <img src="../assets/img/festamajor/alba.png" alt="Alba">
+        </div>
+        <div class="fm-poster">
+          <div class="fm-poster-bg"></div>
+          <div class="fm-poster-content">
+            <img src="../assets/img/festamajor/festamajor.png" alt="Festa Major" class="fm-logo">
+            <div class="fm-divider">
+              <span class="fm-divider-line"></span>
+              <span class="fm-divider-diamond">◆</span>
+              <span class="fm-divider-line"></span>
+            </div>
+            <div class="fm-schedule">
+              <div class="fm-event">
+                <span class="fm-time">18.30h</span>
+                <span class="fm-event-name">Aperitivo en la Plaza</span>
+              </div>
+              <div class="fm-event-sep">· · ·</div>
+              <div class="fm-event">
+                <span class="fm-time">20.30h</span>
+                <span class="fm-event-name">Cena</span>
+              </div>
+              <div class="fm-event-sep">· · ·</div>
+              <div class="fm-event">
+                <span class="fm-time">22.30h</span>
+                <span class="fm-event-name">Festa Grossa</span>
+              </div>
+            </div>
+            <div class="fm-divider fm-divider-bottom">
+              <span class="fm-divider-line"></span>
+              <span class="fm-divider-diamond">◆</span>
+              <span class="fm-divider-line"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <h2 class="faq-title">Antes de que nos preguntes...</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>¿Cuál es el <em>dresscode</em>?</span>
+        </button>
+        <div class="faq-answer">
+          <p>Elegante, pero cómodo. Todo será al aire libre y estaremos rodeados de naturaleza.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          ¿Cómo llego hasta allí?
+        </button>
+        <div class="faq-answer">
+          <p>Allí hay aparcamiento privado donde caben todos los coches. Cada uno se organiza la ida y la vuelta como y con quien quiera.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          ¿Qué tengo que traer si me quedo a dormir?
+        </button>
+        <div class="faq-answer">
+          <p>Pijama, neceser, ropa para el día siguiente.<br>No tienes que preocuparte ni por las sábanas ni por el desayuno.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="form-header">
+      <h2 class="form-title">¿Qué necesitamos de ti?</h2>
+      <p class="form-subtitle">¡Rellena el siguiente formulario para ayudarnos a organizar mejor el gran día!</p>
+    </div>
+    <div class="form-wrapper">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdB8CKf129jKwKb12Ey2wPmRE8slRgkzQI275aWi7wI4CTZTw/viewform?embedded=true"
+        width="100%" height="1645" frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <blockquote class="quote-text">
+      "Celebramos la vida rodeados de quienes amamos"
+    </blockquote>
+  </section>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
