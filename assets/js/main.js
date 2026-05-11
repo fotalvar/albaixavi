@@ -18,13 +18,13 @@ function startCountdown() {
     const seconds = Math.floor((diff / 1000) % 60);
     const pad = n => String(n).padStart(2, "0");
     countdownEl.innerHTML = `
-      <div class="countdown-unit"><span class="countdown-number">${pad(days)}</span><span class="countdown-label">Días</span></div>
+      <div class="countdown-unit"><span class="countdown-number">${pad(days)}</span><span class="countdown-label">Dies</span></div>
       <div class="countdown-separator">|</div>
-      <div class="countdown-unit"><span class="countdown-number">${pad(hours)}</span><span class="countdown-label">Horas</span></div>
+      <div class="countdown-unit"><span class="countdown-number">${pad(hours)}</span><span class="countdown-label">Hores</span></div>
       <div class="countdown-separator">|</div>
-      <div class="countdown-unit"><span class="countdown-number">${pad(minutes)}</span><span class="countdown-label">Minutos</span></div>
+      <div class="countdown-unit"><span class="countdown-number">${pad(minutes)}</span><span class="countdown-label">Minuts</span></div>
       <div class="countdown-separator">|</div>
-      <div class="countdown-unit"><span class="countdown-number">${pad(seconds)}</span><span class="countdown-label">Segundos</span></div>
+      <div class="countdown-unit"><span class="countdown-number">${pad(seconds)}</span><span class="countdown-label">Segons</span></div>
     `;
   }
 
