@@ -149,6 +149,26 @@ document.addEventListener("DOMContentLoaded", startCountdown);
   onScroll();
 })();
 
+// ── Festa Major entrance animations ──
+(function () {
+  const scene = document.querySelector(".fm-scene");
+  if (!scene) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          scene.classList.add("fm-animate");
+          observer.unobserve(scene);
+        }
+      });
+    },
+    { threshold: 0.25 }
+  );
+
+  observer.observe(scene);
+})();
+
 // Acordeon FAQ
 document.querySelectorAll(".faq-question").forEach((btn) => {
   btn.addEventListener("click", () => {
