@@ -350,9 +350,13 @@ body {
   .timeline-item.tl-right {
     padding-left: calc(50% + 24px);
   }
+  .tl-content {
+    max-width: 100%;
+  }
   .tl-img {
-    width: 210px;
-    height: 210px;
+    width: 100%;
+    height: auto;
+    max-width: 210px;
   }
   .tl-label {
     font-size: 1.4rem;
@@ -476,10 +480,10 @@ img.hero-logo {
 /* Chincheta image — relative to .fm-scene so it clears the board's overflow:hidden */
 .fm-pin-img {
   position: absolute;
-  top: -28px;
+  top: -16px;
   left: 50%;
   transform: translateX(-50%);
-  width: clamp(44px, 6vw, 70px);
+  width: clamp(28px, 3.5vw, 44px);
   z-index: 10;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
 }
@@ -506,7 +510,7 @@ img.hero-logo {
   position: absolute;
   inset: 0;
   background: url("../img/festamajor/fondo.png") center center / cover no-repeat;
-  opacity: 0.15;
+  opacity: 0.45;
   z-index: 1;
   pointer-events: none;
 }
@@ -660,12 +664,12 @@ img.hero-logo {
   }
 
   .fm-logo {
-    width: 92%;
+    width: 300px;
   }
 
   .fm-pin-img {
-    width: clamp(38px, 9vw, 56px);
-    top: -22px;
+    width: clamp(24px, 6vw, 36px);
+    top: -4px;
   }
 }
 
@@ -696,13 +700,18 @@ img.hero-logo {
 }
 
 @keyframes fm-char-left {
-  0%   { opacity: 0; transform: translateX(-60px) translateY(-50%); }
-  100% { opacity: 1; transform: translateX(-5%) translateY(-50%); }
+  0%   { transform: translateX(-80px) translateY(-50%); }
+  100% { transform: translateX(-5%) translateY(-50%); }
 }
 
 @keyframes fm-char-right {
-  0%   { opacity: 0; transform: translateX(60px) translateY(-50%); }
-  100% { opacity: 1; transform: translateX(5%) translateY(-50%); }
+  0%   { transform: translateX(80px) translateY(-50%); }
+  100% { transform: translateX(5%) translateY(-50%); }
+}
+
+@keyframes fm-char-fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /* Initial hidden states — elements wait until .fm-animate is added to .fm-scene */
@@ -741,10 +750,14 @@ img.hero-logo {
 .fm-scene.fm-animate .fm-event:nth-child(5) { animation: fm-slide-up 0.4s ease-out 1.78s both; }
 
 .fm-scene.fm-animate .fm-xavi {
-  animation: fm-char-left 0.7s ease-out 0.6s both;
+  animation:
+    fm-char-left 0.35s ease-out 0.6s both,
+    fm-char-fade 1.2s ease-out 0.6s both;
 }
 .fm-scene.fm-animate .fm-alba {
-  animation: fm-char-right 0.7s ease-out 0.6s both;
+  animation:
+    fm-char-right 0.35s ease-out 0.6s both,
+    fm-char-fade  1.2s ease-out 0.6s both;
 }
 
 /* Respect reduced-motion preference */
