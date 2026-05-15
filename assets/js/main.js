@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", startCountdown);
         }
       });
     },
-    { threshold: 0.4 }
+    { threshold: 0.65 }
   );
 
   observer.observe(scene);
@@ -409,7 +409,7 @@ document.addEventListener("DOMContentLoaded", startCountdown);
     mutations.forEach((m) => {
       if (m.type === "attributes" && scene.classList.contains("fm-animate")) {
         obs.disconnect();
-        setTimeout(launch, 800);
+        setTimeout(launch, 1600);
       }
     });
   });
