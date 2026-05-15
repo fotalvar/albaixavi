@@ -9,7 +9,12 @@
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 
-<body>
+<body class="loading">
+
+  <div id="page-loader">
+    <img src="../assets/img/logo_2.svg" alt="logo" class="loader-logo">
+  </div>
+
   <main class="hero-section">
     <div class="hero-bg"></div>
     <div class="hero-logo-container">
@@ -88,6 +93,7 @@
   </section>
 
   <section class="festa-major-section">
+    <canvas class="fm-confetti" aria-hidden="true"></canvas>
     <div class="fm-wood-bg"></div>
     <div class="fm-timeline-connector" id="fmConnector">
       <div class="fm-connector-fill" id="fmConnectorFill"></div>
@@ -103,6 +109,7 @@
           <img src="../assets/img/festamajor/alba.png" alt="Alba">
         </div>
         <div class="fm-poster">
+          <img src="../assets/img/festamajor/chincheta2.png" alt="" class="fm-pin-img">
           <div class="fm-poster-bg"></div>
           <div class="fm-poster-content">
             <img src="../assets/img/festamajor/festamajor.png" alt="Festa Major" class="fm-logo">
