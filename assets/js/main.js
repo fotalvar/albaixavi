@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", startCountdown);
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.3 }
   );
 
   observer.observe(section);
@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", startCountdown);
         }
       });
     },
-    { threshold: 0.25 }
+    { threshold: 0.3 }
   );
 
   observer.observe(scene);
@@ -447,11 +447,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ".form-section",
     ".quote-section",
   ];
-  const lateTargets = [
-    ".location-section",
-  ];
 
-  const allEls = document.querySelectorAll([...earlyTargets, ...lateTargets].join(","));
+  const allEls = document.querySelectorAll(earlyTargets.join(","));
   allEls.forEach(el => el.classList.add("reveal"));
 
   function makeObserver(options) {
@@ -468,7 +465,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
-  const earlyObserver = makeObserver({ threshold: 0.05 });
+  const earlyObserver = makeObserver({ threshold: 0.4 });
 
   requestAnimationFrame(function () {
     requestAnimationFrame(function () {
@@ -477,22 +474,6 @@ document.addEventListener("DOMContentLoaded", function () {
         earlyObserver.observe(el);
       });
 
-      // Secciones "late": se activan cuando el top del elemento
-      // ha pasado el 50% del viewport (mitad de pantalla)
-      const lateEls = Array.from(document.querySelectorAll(lateTargets.join(",")));
-      lateEls.forEach(el => el.classList.add("reveal"));
-
-      function checkLate() {
-        lateEls.forEach(function (el) {
-          if (el.classList.contains("visible")) return;
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight * 0.5) {
-            el.classList.add("visible");
-          }
-        });
-      }
-
-      window.addEventListener("scroll", checkLate, { passive: true });
     });
   });
 });

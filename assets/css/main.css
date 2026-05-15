@@ -66,6 +66,19 @@ body.loading .hero-bg {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── Countdown entrada específica ──────────── */
+.countdown-container.reveal {
+  opacity: 0;
+  transform: translateY(36px) scale(0.97);
+  transition:
+    opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.countdown-container.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 @keyframes heroCopy {
   from {
     opacity: 0;
