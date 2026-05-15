@@ -409,8 +409,7 @@ document.addEventListener("DOMContentLoaded", startCountdown);
     mutations.forEach((m) => {
       if (m.type === "attributes" && scene.classList.contains("fm-animate")) {
         obs.disconnect();
-        // Small delay so confetti appears as poster settles
-        setTimeout(launch, 1800);
+        setTimeout(launch, 800);
       }
     });
   });

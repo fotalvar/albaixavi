@@ -109,8 +109,7 @@ body {
 .hero-section {
   position: relative;
   width: 100vw;
-  height: 100dvh;
-  min-height: 100svh;
+  height: 100svh;
   overflow: hidden;
 }
 .hero-bg {
