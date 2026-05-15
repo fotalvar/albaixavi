@@ -13,10 +13,14 @@
     setTimeout(function () {
       loader.classList.add("hidden");
       document.body.classList.remove("loading");
+      setTimeout(function () {
+        const countdown = document.querySelector(".countdown-container");
+        if (countdown) countdown.classList.add("visible");
+      }, 400);
     }, delay);
   }
 
-  if (document.readyState === "complete") {
+if (document.readyState === "complete") {
     dismissLoader();
   } else {
     window.addEventListener("load", dismissLoader);
@@ -282,7 +286,7 @@ document.addEventListener("DOMContentLoaded", startCountdown);
         }
       });
     },
-    { threshold: 0.3 }
+    { threshold: 0.4 }
   );
 
   observer.observe(scene);
@@ -306,7 +310,7 @@ document.addEventListener("DOMContentLoaded", startCountdown);
   ];
 
   const PARTICLE_COUNT = 200;
-  const DURATION = 7000;
+  const DURATION = 12000;
 
   let particles = [];
   let animId = null;
@@ -406,7 +410,7 @@ document.addEventListener("DOMContentLoaded", startCountdown);
       if (m.type === "attributes" && scene.classList.contains("fm-animate")) {
         obs.disconnect();
         // Small delay so confetti appears as poster settles
-        setTimeout(launch, 800);
+        setTimeout(launch, 1800);
       }
     });
   });
@@ -440,7 +444,6 @@ document.querySelectorAll(".faq-question").forEach((btn) => {
 // Scroll-reveal
 document.addEventListener("DOMContentLoaded", function () {
   const earlyTargets = [
-    ".countdown-container",
     ".timeline-section",
     ".festa-major-section",
     ".faq-section",

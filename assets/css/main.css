@@ -36,7 +36,10 @@
   }
 }
 
-/* Mientras carga, bloquear las animaciones de entrada */
+/* Mientras carga, bloquear scroll y animaciones de entrada */
+body.loading {
+  overflow: hidden;
+}
 body.loading .hero-bg {
   animation: none;
 }
@@ -68,16 +71,21 @@ body.loading .hero-bg {
 }
 
 /* ── Countdown entrada específica ──────────── */
-.countdown-container.reveal {
-  opacity: 0;
-  transform: translateY(36px) scale(0.97);
-  transition:
-    opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+@keyframes countdownEnter {
+  from {
+    opacity: 0;
+    transform: translateY(32px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
-.countdown-container.reveal.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+.countdown-container {
+  opacity: 0;
+}
+.countdown-container.visible {
+  animation: countdownEnter 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 @keyframes heroCopy {
   from {
@@ -1073,6 +1081,20 @@ img.hero-logo {
   padding: 60px 24px 80px;
   max-width: 860px;
   margin: 0 auto;
+  position: relative;
+}
+
+.faq-section::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 40px;
+  background: linear-gradient(to top, rgba(0,0,0,0.08), transparent);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .faq-title {
