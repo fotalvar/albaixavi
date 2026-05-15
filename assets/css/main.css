@@ -294,6 +294,9 @@ body {
 .location-section.loc-section-animate .location-bg {
   opacity: 1;
 }
+section.location-section.loc-section-animate {
+  border-bottom: 4px solid #7b9a72;
+}
 .location-card {
   opacity: 0;
   transform: translateY(40px);
@@ -634,9 +637,9 @@ img.hero-logo {
 /* Characters — centred vertically on the poster */
 .fm-character {
   position: absolute;
-  top: 50%;
+  top: 70%;
   transform: translateY(-50%);
-  width: clamp(100px, 16vw, 190px);
+  width: clamp(105px, 16vw, 190px);
   z-index: 10;
 }
 
@@ -746,14 +749,14 @@ img.hero-logo {
   content: "";
   position: absolute;
   inset: 10px;
-  border: 1.5px solid rgba(80, 50, 20, 0.18);
-  border-radius: 2px;
+  border: 1.5px solid rgb(213 14 25);
+  border-radius: 3px;
   pointer-events: none;
 }
 
 .fm-logo {
-  width: 95%;
-  max-width: 560px;
+  width: 80%;
+  max-width: 440px;
   object-fit: contain;
   position: relative;
   z-index: 1;
@@ -817,7 +820,7 @@ img.hero-logo {
   letter-spacing: 3px;
   color: #fff;
   text-transform: uppercase;
-  background-color: #7a5a2a;
+  background-color: #1046a2;
   padding: 3px 12px;
   border-radius: 999px;
   display: inline-block;
@@ -848,7 +851,7 @@ img.hero-logo {
   }
 
   .fm-logo {
-    width: 340px;
+    width: 220px;
   }
 
   .fm-board {
@@ -857,7 +860,7 @@ img.hero-logo {
   }
 
   .fm-character {
-    width: clamp(90px, 26vw, 140px);
+    width: clamp(105px, 29.4vw, 168px);
   }
 
   /* Push poster content inward so text doesn't overlap characters */
@@ -882,7 +885,7 @@ img.hero-logo {
   }
 
   .fm-logo {
-    width: 340px;
+    width: 220px;
   }
 
   .fm-pin-img {
@@ -1096,7 +1099,7 @@ img.hero-logo {
   transform: translateX(-50%);
   width: 100vw;
   height: 40px;
-  background: linear-gradient(to top, rgba(0,0,0,0.08), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.08), transparent);
   pointer-events: none;
   z-index: 1;
 }
